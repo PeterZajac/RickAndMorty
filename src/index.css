@@ -129,7 +129,6 @@ table thead th {
 .character-detail-container {
   max-width: 720px;
   margin: 50px auto;
-
   width: 100%;
 }
 
@@ -174,10 +173,6 @@ table thead th {
 @media (min-width: 1024px) {
   .character-detail-container {
     margin: 70px auto;
-  }
-
-  .character-detail {
-    gap: 40px;
   }
 }
 
@@ -226,7 +221,8 @@ table thead th {
   gap: 27px;
   justify-content: start;
   max-width: 300px;
-  margin: 20px 0px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .m-right {
