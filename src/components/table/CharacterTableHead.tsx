@@ -5,12 +5,12 @@ interface IColumn {
   name: string;
 }
 
-interface IColumntTableProps {
+interface IColumnTableProps {
   columns: IColumn[];
   sortData: (key: string) => void;
   getSortIcon: (key: string) => React.ReactNode;
 }
-const CharacterTableHead: React.FC<IColumntTableProps> = ({
+const CharacterTableHead: React.FC<IColumnTableProps> = ({
   columns,
   sortData,
   getSortIcon,
