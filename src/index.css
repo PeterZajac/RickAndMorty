@@ -146,6 +146,7 @@ table thead th {
   font-size: 32px;
   font-weight: 400;
   font-family: var(--font-family-oswald);
+  margin: 0;
 }
 
 .badge-wrapper {
@@ -225,9 +226,10 @@ table thead th {
 .character-episodes-h3 {
   font-size: 12px;
   font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family-montserrat);
   text-transform: uppercase;
   letter-spacing: 1.5px;
+  margin: 12px 0;
 }
 
 .character-episodes-span {
@@ -245,6 +247,6 @@ table thead th {
 .character-episodes-names {
   font-size: 14px;
   font-weight: 400;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family-montserrat);
   width: 611px;
 }
