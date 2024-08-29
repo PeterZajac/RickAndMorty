@@ -38,6 +38,9 @@ table {
   margin: 0 auto;
 }
 
+table::-webkit-scrollbar {
+  display: none;
+}
 table th {
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -114,15 +117,68 @@ table thead th {
   background-color: var(--hover-background-color);
 }
 
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  flex-direction: column;
+}
+
 .character-detail-container {
   max-width: 720px;
   margin: 50px auto;
-  padding: 0 20px;
+
   width: 100%;
+}
+
+.back-button-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--font-family-oswald);
+  line-height: 20.75px;
+  text-transform: uppercase;
+  color: var(--text-white-color);
+  letter-spacing: 2px;
+  background-color: transparent;
 }
 
 .character-detail {
   display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .flex-container {
+    flex-direction: row;
+    padding: 0 10px;
+  }
+
+  .character-detail {
+    flex-direction: row;
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .character-detail-container {
+    margin: 70px auto;
+  }
+
+  .character-detail {
+    gap: 40px;
+  }
 }
 
 .character-about {
@@ -163,25 +219,6 @@ table thead th {
   font-size: 14px;
   font-weight: 400;
 }
-.back-button-container {
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 20px;
-}
-
-.back-button {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: var(--font-family-oswald);
-  line-height: 20.75px;
-  text-transform: uppercase;
-  color: var(--text-white-color);
-  letter-spacing: 2px;
-  background-color: transparent;
-}
 
 .detail-wrapper {
   display: flex;
@@ -194,13 +231,6 @@ table thead th {
 
 .m-right {
   margin-right: 0.25rem;
-}
-
-.flex-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
 }
 
 .load-more-wrapper {
