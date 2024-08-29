@@ -1,6 +1,6 @@
 import { ICharacter, Response } from '../types/ICharacter';
 import { useQuery } from '@tanstack/react-query';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti';
 import CharacterTableBody from '../components/table/CharacterTableBody';
 import CharacterTableHead from '../components/table/CharacterTableHead';
@@ -15,7 +15,7 @@ export const Home: React.FC = () => {
   const [visibleCount, setVisibleCount] = useState(5);
 
   const { isLoading, error, data } = useQuery<Response>({
-    queryKey: ['rickMorty'],
+    queryKey: ['rickAndMorty'],
     queryFn: () =>
       fetch('https://rickandmortyapi.com/api/character').then((res) =>
         res.json()
@@ -28,6 +28,19 @@ export const Home: React.FC = () => {
     }
   }, [data]);
 
+  const columns = useMemo(
+    () => [
+      { name: 'Name', key: 'name' },
+      { name: 'Status', key: 'status' },
+      { name: 'Gender', key: 'gender' },
+      { name: 'Species', key: 'species' },
+      { name: 'Created', key: 'created' },
+      { name: 'Origin', key: 'origin' },
+      { name: 'Detail', key: 'url' },
+    ],
+    []
+  );
+
   const sortData = (key: string) => {
     let direction: 'asc' | 'desc' = 'asc';
     if (
@@ -38,29 +51,37 @@ export const Home: React.FC = () => {
       direction = 'desc';
     }
     setSortConfig({ key, direction });
+  };
+
+  const sortedData = useMemo(() => {
+    if (!sortConfig) return tableData.slice(0, visibleCount);
 
     const visibleData = tableData.slice(0, visibleCount);
 
-    const sortedData = visibleData.sort((a, b) => {
-      if (key === 'origin') {
-        if (a.origin.name < b.origin.name) return direction === 'asc' ? -1 : 1;
-        if (a.origin.name > b.origin.name) return direction === 'asc' ? 1 : -1;
+    return visibleData.sort((a, b) => {
+      if (sortConfig.key === 'origin') {
+        if (a.origin.name < b.origin.name)
+          return sortConfig.direction === 'asc' ? -1 : 1;
+        if (a.origin.name > b.origin.name)
+          return sortConfig.direction === 'asc' ? 1 : -1;
         return 0;
       } else {
-        if (a[key as keyof ICharacter] < b[key as keyof ICharacter]) {
-          return direction === 'asc' ? -1 : 1;
+        if (
+          a[sortConfig.key as keyof ICharacter] <
+          b[sortConfig.key as keyof ICharacter]
+        ) {
+          return sortConfig.direction === 'asc' ? -1 : 1;
         }
-        if (a[key as keyof ICharacter] > b[key as keyof ICharacter]) {
-          return direction === 'asc' ? 1 : -1;
+        if (
+          a[sortConfig.key as keyof ICharacter] >
+          b[sortConfig.key as keyof ICharacter]
+        ) {
+          return sortConfig.direction === 'asc' ? 1 : -1;
         }
         return 0;
       }
     });
-
-    setTableData((prev) => {
-      return [...sortedData, ...prev.slice(visibleCount)];
-    });
-  };
+  }, [tableData, sortConfig, visibleCount]);
 
   const getSortIcon = (key: string) => {
     if (key === 'url') return null;
@@ -81,18 +102,8 @@ export const Home: React.FC = () => {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
-  const columns = [
-    { name: 'Name', key: 'name' },
-    { name: 'Status', key: 'status' },
-    { name: 'Gender', key: 'gender' },
-    { name: 'Species', key: 'species' },
-    { name: 'Created', key: 'created' },
-    { name: 'Origin', key: 'origin' },
-    { name: 'Detail', key: 'url' },
-  ];
-
   return (
-    <div className='table-wrapper'>
+    <div className='table-wrapper '>
       <table>
         <CharacterTableHead
           columns={columns}
@@ -101,7 +112,7 @@ export const Home: React.FC = () => {
         />
 
         <CharacterTableBody
-          characters={tableData}
+          characters={sortedData}
           visibleCount={visibleCount}
         />
       </table>

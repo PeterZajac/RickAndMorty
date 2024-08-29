@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CharacterStatusBadge from '../CharacterStatusBadge';
-import { CharacterOrigin } from '../CharacterOrogin';
+import { CharacterOrigin } from '../CharacterOrigin';
 import { ICharacter } from '../../types/ICharacter';
 
 interface CharacterTableBodyProps {

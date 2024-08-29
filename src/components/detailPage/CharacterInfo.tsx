@@ -32,32 +32,17 @@ const CharacterInfo = ({
       text: location.name,
     },
   ];
+
   return (
     <div>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '27px',
-          justifyContent: 'start',
-          maxWidth: '300px',
-        }}
-      >
-        <h1
-          style={{
-            fontSize: '32px',
-            fontWeight: '400',
-            fontFamily: 'Oswald , sans-serif',
-          }}
-        >
-          {name}
-        </h1>
+      <div className='detail-wrapper'>
+        <h1 className='detail-h1'>{name}</h1>
         <CharacterStatusBadge status={status} />
       </div>
       {items.map((item, index) => (
-        <div className={`character-info-div ${index > 0 ? 'm-top-bot18' : ''}`}>
+        <div className={`character-about ${index > 0 ? 'm-top-bot18' : ''}`}>
           <img src={item.iconPath} alt={item.text} />
-          <span className='character-info-span'>{item.text}</span>
+          <span className='character-info-text'>{item.text}</span>
         </div>
       ))}
     </div>

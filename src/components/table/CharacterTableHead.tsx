@@ -27,7 +27,6 @@ const CharacterTableHead: React.FC<IColumntTableProps> = ({
               paddingBottom: '15px',
               paddingLeft: column.key === 'name' ? '10px' : '0px',
             }}
-            className='name-padding'
           >
             {column.name} {getSortIcon(column.key)}
           </th>

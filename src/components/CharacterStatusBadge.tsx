@@ -5,7 +5,7 @@ import { MdQuestionMark } from 'react-icons/md';
 import { EStatus } from '../types/ICharacter';
 
 interface CharacterStatusBadgeProps {
-  status: EStatus | 'Unknown';
+  status: EStatus;
 }
 
 const CharacterStatusBadge: React.FC<CharacterStatusBadgeProps> = ({
@@ -36,22 +36,13 @@ const CharacterStatusBadge: React.FC<CharacterStatusBadgeProps> = ({
 
   return (
     <div
+      className='badge-wrapper'
       style={{
         backgroundColor,
         color: textColor,
-        display: 'flex',
-        justifyContent: 'center',
-        width: 'fit-content',
-        height: '1.4rem',
-        alignItems: 'center',
-        padding: '0 0.5rem ',
-        paddingRight: '0.601rem',
-        borderRadius: '4px',
-        fontSize: '14px',
-        fontWeight: 400,
       }}
     >
-      <IconComponent style={{ marginRight: '0.25rem' }} />
+      <IconComponent className='m-right' />
       <span>{status.charAt(0).toUpperCase() + status.slice(1)}</span>
     </div>
   );
