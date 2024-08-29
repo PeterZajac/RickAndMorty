@@ -180,7 +180,7 @@ table thead th {
   gap: 27px;
   justify-content: start;
   max-width: 300px;
-  margin: 0 20px;
+  margin: 20px 0px;
 }
 
 .m-right {
