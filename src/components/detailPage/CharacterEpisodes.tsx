@@ -5,6 +5,7 @@ const CharacterEpisodes = ({ episodesData }: { episodesData: string[] }) => {
         style={{
           display: 'flex',
           alignItems: 'center',
+          marginTop: '28px',
         }}
       >
         <h3
@@ -40,6 +41,7 @@ const CharacterEpisodes = ({ episodesData }: { episodesData: string[] }) => {
           fontWeight: '400',
           fontFamily: 'Montserrat , sans-serif',
           width: '611px',
+          marginTop: '12px',
         }}
       >
         {' '}
