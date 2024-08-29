@@ -115,8 +115,10 @@ table thead th {
 }
 
 .character-detail-container {
-  width: 720px;
+  max-width: 720px;
   margin: 50px auto;
+  padding: 0 20px;
+  width: 100%;
 }
 
 .character-detail {
@@ -161,11 +163,15 @@ table thead th {
   font-size: 14px;
   font-weight: 400;
 }
+.back-button-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
 
 .back-button {
-  position: absolute;
-  top: 65px;
-  left: 300px;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   font-size: 14px;
   font-weight: 400;

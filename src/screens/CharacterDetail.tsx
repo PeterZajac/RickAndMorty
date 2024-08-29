@@ -62,10 +62,12 @@ const CharacterDetail: React.FC = () => {
   return (
     <div className='flex-container'>
       <div className='character-detail-container'>
-        <a href='/' className='back-button'>
-          {arrowBackIcon}
-          <span className='p-left-10'>Back</span>
-        </a>
+        <div className='back-button-container'>
+          <a href='/' className='back-button'>
+            {arrowBackIcon}
+            <span className='p-left-10'>Back</span>
+          </a>
+        </div>
         <div className='character-detail'>
           <CharacterImage data={data} />
           <CharacterInfo
