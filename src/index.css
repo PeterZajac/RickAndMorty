@@ -2,6 +2,7 @@
   --background-color: #212224;
   --text-white-color: #fff;
   --accent-color: #59abe6;
+  --episode-color: #0d8cd2;
   --border-color: #424345;
   --hover-background-color: #424345;
   --table-heading-color: #bcbdbd;
@@ -172,6 +173,7 @@ table thead th {
   text-transform: uppercase;
   color: var(--text-white-color);
   letter-spacing: 2px;
+  background-color: transparent;
 }
 
 .detail-wrapper {
@@ -213,4 +215,36 @@ table thead th {
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
   text-transform: capitalize;
+}
+
+.character-episodes-info {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.character-episodes-h3 {
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.character-episodes-span {
+  background-color: var(--episode-color);
+  color: white;
+  border-radius: 5px;
+  font-size: 11px;
+  width: 23px;
+  height: 23px;
+  display: inline-block;
+  text-align: center;
+  line-height: 23px;
+}
+
+.character-episodes-names {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  width: 611px;
 }
