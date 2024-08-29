@@ -145,7 +145,6 @@ table thead th {
   font-size: 32px;
   font-weight: 400;
   font-family: var(--font-family-oswald);
-  margin: 20 0px;
 }
 
 .badge-wrapper {
@@ -181,6 +180,7 @@ table thead th {
   gap: 27px;
   justify-content: start;
   max-width: 300px;
+  margin: 0 20px;
 }
 
 .m-right {
