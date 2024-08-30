@@ -6,16 +6,14 @@ import { ICharacter } from '../../types/ICharacter';
 
 interface CharacterTableBodyProps {
   characters: ICharacter[];
-  visibleCount: number;
 }
 
 const CharacterTableBody: React.FC<CharacterTableBodyProps> = ({
   characters,
-  visibleCount,
 }) => {
   return (
     <tbody>
-      {characters.slice(0, visibleCount).map((character) => (
+      {characters.map((character) => (
         <tr key={character.id} className='table-row'>
           <td>
             <div>

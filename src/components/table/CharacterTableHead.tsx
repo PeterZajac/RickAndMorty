@@ -1,13 +1,10 @@
 import React from 'react';
-
-interface IColumn {
-  key: string;
-  name: string;
-}
+import { ICharacter } from '../../types/ICharacter';
+import { IColumn } from '../../types/Table';
 
 interface IColumnTableProps {
   columns: IColumn[];
-  sortData: (key: string) => void;
+  sortData: (key: keyof ICharacter) => void;
   getSortIcon: (key: string) => React.ReactNode;
 }
 const CharacterTableHead: React.FC<IColumnTableProps> = ({

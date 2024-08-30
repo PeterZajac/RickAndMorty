@@ -5,8 +5,11 @@ interface ICharacterOriginProps {
 export const CharacterOrigin: React.FC<ICharacterOriginProps> = ({
   origin,
 }) => {
-  if (origin === 'unknown') {
-    return <span className='character-origin'> ? {origin}</span>;
-  }
-  return <span>{origin}</span>;
+  const isUnknown = origin === 'unknown';
+  return (
+    <span className={isUnknown ? 'character-origin' : ''}>
+      {isUnknown && '? '}
+      {origin}
+    </span>
+  );
 };

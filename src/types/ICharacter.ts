@@ -33,3 +33,4 @@ export interface ICharacter {
 export interface Response {
   results: ICharacter[];
 }
+

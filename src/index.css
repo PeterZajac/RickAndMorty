@@ -304,3 +304,12 @@ table thead th {
 .ls-1 {
   letter-spacing: 1px;
 }
+
+.table-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.table-wrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
