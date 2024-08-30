@@ -288,3 +288,19 @@ table thead th {
     width: 611px;
   }
 }
+
+.w-130 {
+  width: 130px;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.m-right30 {
+  margin-right: 30px;
+}
+
+.ls-1 {
+  letter-spacing: 1px;
+}

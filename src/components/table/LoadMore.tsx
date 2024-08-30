@@ -10,7 +10,7 @@ const LoadMore: React.FC<LoadMoreProps> = ({ handleLoadMore }) => {
       <div>
         <button className='load-button' onClick={handleLoadMore}>
           <FaArrowDown className='arrow-down-style ' />{' '}
-          <span style={{ letterSpacing: '1px' }}>Load More</span>
+          <span className='ls-1'>Load More</span>
         </button>
       </div>
     </div>

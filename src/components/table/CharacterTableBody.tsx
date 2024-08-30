@@ -23,7 +23,7 @@ const CharacterTableBody: React.FC<CharacterTableBodyProps> = ({
               <p>{character.name}</p>
             </div>
           </td>
-          <td style={{ width: '130px' }}>
+          <td className='w-130'>
             <CharacterStatusBadge status={character.status} />
           </td>
           <td>{character.gender}</td>

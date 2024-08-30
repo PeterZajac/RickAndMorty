@@ -6,7 +6,7 @@ interface CharacterImageProps {
 }
 const CharacterImage = ({ data }: CharacterImageProps) => {
   return (
-    <div style={{ marginRight: '30px' }}>
+    <div className='m-right30'>
       <img src={data?.image} alt={data?.name} />
     </div>
   );
