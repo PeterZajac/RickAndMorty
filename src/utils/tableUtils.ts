@@ -1,8 +1,13 @@
 import { ICharacter } from '../types/ICharacter';
 import { ESorting } from '../types/Sorting';
 
+interface SortConfig {
+  key: keyof ICharacter;
+  direction: ESorting;
+}
+
 export const sortTableData =
-  (sortConfig: any) => (a: ICharacter, b: ICharacter) => {
+  (sortConfig: SortConfig) => (a: ICharacter, b: ICharacter) => {
     if (sortConfig.key === 'origin') {
       if (a.origin.name < b.origin.name)
         return sortConfig.direction === ESorting.Ascending ? -1 : 1;

@@ -155,7 +155,6 @@ table thead th {
 .character-detail {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 @media (min-width: 768px) {
@@ -166,7 +165,6 @@ table thead th {
 
   .character-detail {
     flex-direction: row;
-    gap: 30px;
   }
 }
 

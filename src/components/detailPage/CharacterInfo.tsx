@@ -14,7 +14,7 @@ const CharacterInfo = ({
   origin,
   location,
 }: TCharacterInfoProps) => {
-  const items = [
+  const rows = [
     {
       iconPath: '/images/gender.svg',
       text: gender,
@@ -39,8 +39,11 @@ const CharacterInfo = ({
         <h1 className='detail-h1'>{name}</h1>
         <CharacterStatusBadge status={status} />
       </div>
-      {items.map((item, index) => (
-        <div className={`character-about ${index > 0 ? 'm-top-bot18' : ''}`}>
+      {rows.map((item, index) => (
+        <div
+          key={item.text}
+          className={`character-about ${index > 0 ? 'm-top-bot18' : ''}`}
+        >
           <img src={item.iconPath} alt={item.text} />
           <span className='character-info-text'>{item.text}</span>
         </div>
