@@ -72,7 +72,7 @@ table td:nth-child(1) div {
   padding-left: 10px;
 }
 
-.table-row:hover {
+table tbody tr:hover {
   background-color: black;
 }
 
