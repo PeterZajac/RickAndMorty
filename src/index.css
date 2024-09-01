@@ -73,7 +73,7 @@ table td:nth-child(1) div {
 }
 
 table tbody tr:hover {
-  background-color: black;
+  background-color: black !important;
 }
 
 table th {

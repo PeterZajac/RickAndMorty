@@ -14,7 +14,7 @@ const CharacterTableBody: React.FC<CharacterTableBodyProps> = ({
   return (
     <tbody>
       {characters.map((character) => (
-        <tr key={character.id} className='table-row'>
+        <tr key={character.id}>
           <td>
             <div>
               <img src={character.image} alt={character.name} />
