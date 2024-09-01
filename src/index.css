@@ -71,6 +71,7 @@ table td:nth-child(1) div {
   gap: 10px;
   padding-left: 10px;
 }
+
 table tbody tr:hover {
   background-color: black;
 }
