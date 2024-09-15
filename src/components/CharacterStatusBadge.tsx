@@ -41,7 +41,7 @@ const CharacterStatusBadge: React.FC<CharacterStatusBadgeProps> = ({
         backgroundColor,
         color: textColor,
       }}
-    >
+    > 
       <IconComponent className='m-right bg-transparent' />
       <span className='bg-transparent'>
         {status.charAt(0).toUpperCase() + status.slice(1)}

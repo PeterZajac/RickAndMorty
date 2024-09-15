@@ -7,7 +7,7 @@ import CharacterInfo from '../components/detailPage/CharacterInfo';
 import CharacterEpisodes from '../components/detailPage/CharacterEpisodes';
 
 const CharacterDetail: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const id = useParams<{ id: string }>().id;
   const [episodesData, setEpisodesData] = useState<string[]>([]);
   const [episodesLoading, setEpisodesLoading] = useState<boolean>(true);
 
